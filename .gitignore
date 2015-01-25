@@ -5,3 +5,5 @@
 /.envrc
 /.vagrant
 /vendor/bundle
+.kitchen/
+.kitchen.local.yml
