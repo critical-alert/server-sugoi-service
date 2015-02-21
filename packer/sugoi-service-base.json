@@ -8,9 +8,9 @@
     "access_key": "{{user `aws_access_key`}}",
     "secret_key": "{{user `aws_secret_key`}}",
     "region": "ap-northeast-1",
-    "source_ami": "ami-3d50120d",
+    "source_ami": "ami-13614b12",
     "instance_type": "t2.micro",
-    "ssh_username": "ubuntu",
-    "ami_name": "packer-example {{timestamp}}"
+    "ssh_username": "root",
+    "ami_name": "packer-centos-example-{{timestamp}}"
   }]
 }
