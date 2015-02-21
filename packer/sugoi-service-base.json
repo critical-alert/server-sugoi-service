@@ -17,7 +17,8 @@
     "type": "shell",
     "inline": [
       "sleep 30",
-      "sudo yum -y update"
+      "sudo yum -y update",
+      "sudo rm -f /root/.ssh/authorized_keys"
     ]
   }]
 }
