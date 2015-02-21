@@ -4,6 +4,7 @@ driver:
 
 provisioner:
   name: chef_solo
+  cookbook_path: my-cookbooks/apache
 
 platforms:
   - name: centos-6.5
@@ -12,4 +13,5 @@ suites:
   - name: default
     run_list:
       - recipe[zsh::default]
+      - recipe[apache::default]
     attributes:
