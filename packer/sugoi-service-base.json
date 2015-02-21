@@ -12,5 +12,12 @@
     "instance_type": "t2.micro",
     "ssh_username": "root",
     "ami_name": "packer-centos-example-{{timestamp}}"
+  }],
+  "provisioners": [{
+    "type": "shell",
+    "inline": [
+      "sleep 30",
+      "sudo yum -y update"
+    ]
   }]
 }
