@@ -34,6 +34,24 @@ resource "aws_security_group" "ssh_enable" {
 resource "aws_vpc" "main" {
     cidr_block = "10.0.0.0/16"
     tags {
-        Name = "create terraform"
+        Name = "create terraform vpc"
+    }
+}
+
+resource "aws_subnet" "1a" {
+    vpc_id = "${aws_vpc.main.id}"
+    cidr_block = "10.0.1.0/24"
+    availability_zone = "ap-northeast-1a"
+    tags {
+        Name = "create terraform subnet"
+    }
+}
+
+resource "aws_subnet" "1c" {
+    vpc_id = "${aws_vpc.main.id}"
+    cidr_block = "10.0.2.0/24"
+    availability_zone = "ap-northeast-1c"
+    tags {
+        Name = "create terraform subnet"
     }
 }
