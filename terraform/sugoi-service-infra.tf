@@ -16,13 +16,17 @@ resource "aws_instance" "app" {
     ami = "ami-2f1bf82f"
     instance_type = "t2.micro"
     key_name = "${var.key_name}"
-    security_groups = ["ssh_enable"]
+    security_groups = ["${aws_security_group.ssh_enable.id}"]
+    subnet_id = "${aws_subnet.1a.id}"
+    tags {
+        Name = "create terraform instance"
+    }
 }
 
 resource "aws_security_group" "ssh_enable" {
   name = "ssh_enable"
-    description = "Used in the terraform"
-
+  description = "Used in the terraform"
+  vpc_id = "${aws_vpc.main.id}"
   ingress {
       from_port = 22
       to_port = 22
