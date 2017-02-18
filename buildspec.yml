@@ -11,6 +11,7 @@ phases:
     commands:
       - echo Build started on `date`
       - packer version
+      - packer build packer/test_ami.json
   post_build:
     commands:
       - echo Build completed on `date`
