@@ -4,14 +4,13 @@ driver:
 
 provisioner:
   name: chef_solo
-  cookbook_path: my-cookbooks/apache
+  cookbook_path: site-cookbooks/
 
 platforms:
-  - name: centos-6.5
+  - name: centos/7
 
 suites:
   - name: default
     run_list:
-      - recipe[zsh::default]
-      - recipe[apache::default]
+      - recipe[ruby::default]
     attributes:
