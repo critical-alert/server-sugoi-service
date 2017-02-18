@@ -3,13 +3,15 @@ version: 0.1
 phases:
   install:
     commands:
-      - echo Nothing to do in the install phase...
+      - wget https://releases.hashicorp.com/packer/0.12.2/packer_0.12.2_linux_amd64.zip && unzip -d packer packer_0.12.2_linux_amd64.zip
+      - cp -r packer/ /usr/local/
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
   build:
     commands:
       - echo Build started on `date`
+      - packer version
   post_build:
     commands:
       - echo Build completed on `date`
