@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:latest
+    working_directory: /home/circleci/server-sugoi-service
+    steps:
+      - checkout
+      - run:
+          name: install aws-cli
+          command: |
+            sudo apt-get update && sudo apt-get install -qq -y python-pip libpython-dev
+            curl -O https://bootstrap.pypa.io/get-pip.py && sudo python get-pip.py
+            sudo pip install -q awscli --upgrade
