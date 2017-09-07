@@ -17,6 +17,8 @@ phases:
       - aws ec2 describe-instances
       - packer version
       - packer build packer/test_ami.json
+      - ls -la /bin/sh
+      - which sh
   post_build:
     commands:
       - echo Build completed on `date`
